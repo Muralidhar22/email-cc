@@ -1,0 +1,80 @@
+:root {
+    --scrollbar-bg: #CFD8DC;
+    --scrollbar-thumb-bg: #90A4AE;  
+}
+
+.email-body {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    padding-right: 5rem;
+    border-radius: 0.5rem;
+    height: 100%;
+    background-color: #ffffff;
+}
+
+.avatar {
+    background-color: var(--color-accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.email-body-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.25rem;
+}
+
+.email-body-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.email-body-subject{
+   color: var(--color-text);
+   font-weight: bolder;
+}
+
+.favorite-btn {
+    background-color: var(--color-accent);
+    border: none;
+    color: #ffffff;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+.inverted-favorite-btn {
+    background-color: var(--color-bg);
+    color: var(--color-accent);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 2rem;
+}
+
+.email-body-text{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-grow: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.email-body-text::-webkit-scrollbar {
+    width: 0.35rem;
+}
+
+.email-body-text::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-bg);
+    border-radius: 0.35rem;
+}

@@ -1,0 +1,13 @@
+.page-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+.page-numbered-buttons {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.page-numbered-buttons.selected{
+    text-decoration: underline;
+}

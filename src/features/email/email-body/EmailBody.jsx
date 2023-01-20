@@ -28,10 +28,12 @@ const EmailBody = ({ selectedEmailId, filterKey, setSplitScreen }) => {
     const formattedTimeStamp = date && getFormattedDateTime(date)
 
     useEffect(() => {
-            dispatch(fetchEmailBody(selectedEmailId))
+        dispatch(fetchEmailBody(selectedEmailId))
+        if(!emailState.read){
             dispatch(updateRead({ emailId: id, read: true }))
             updatePersistedEmailList(id, 'read', true, page)
             setPersistedEmailStatus(id, 'read')
+        }
     },[selectedEmailId])
     
     if(

@@ -27,7 +27,7 @@ export const setPersistedEmailStatus = (emailId, statusType) => {
       &&
      !persistedStatus[statusType].includes(emailId)){
        persistedStatus = { ...persistedStatus, [statusType]: [...persistedStatus[statusType],emailId] }
-    } else if (persistedStatus && !persistedStatus[statusType].includes(emailId)) {
+    } else if (persistedStatus) {
        persistedStatus = { ...persistedStatus , [statusType]: [emailId] }
     } else if (!persistedStatus){
         persistedStatus = { [statusType]: [emailId] }

@@ -8,7 +8,7 @@ import { getFormattedDateTime } from "../../../utils/dateTime";
 
 import styles from "./EmailBody.module.css";
 
-const EmailBody = ({ selectedEmailId, filterKey }) => {
+const EmailBody = ({ selectedEmailId, filterKey, setSplitScreen }) => {
     const dispatch = useDispatch();
     const page = useSelector(state => state.email.page)
     const { id, from, subject, date } = useSelector(state => state.email.filteredList.find(item => item.id === selectedEmailId))
@@ -39,6 +39,7 @@ const EmailBody = ({ selectedEmailId, filterKey }) => {
         &&
         !emailState[filterKey]
     ) {
+       setSplitScreen(false)
        return null; 
     }
     

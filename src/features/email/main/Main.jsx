@@ -58,7 +58,7 @@ const Main = () => {
                 {splitScreen  
                 &&
                 <div className={styles['email-body-container']}>
-                 <EmailBody filterKey={filterKey} selectedEmailId={selectedEmailId} />
+                 <EmailBody filterKey={filterKey} setSplitScreen={setSplitScreen} selectedEmailId={selectedEmailId} />
                 </div>}
             </main> 
         )

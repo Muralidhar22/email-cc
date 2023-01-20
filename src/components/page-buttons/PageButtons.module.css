@@ -11,3 +11,8 @@
 .page-numbered-buttons.selected{
     text-decoration: underline;
 }
+
+.page-direction-buttons{
+    background: none;
+    border: none;
+}

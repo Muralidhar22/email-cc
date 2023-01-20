@@ -29,7 +29,7 @@ const EmailItem = ({
                 <span className={styles['email-item-avatar']}>
                     {details.from.name.charAt(0)}
                 </span>
-                <div className={styles['']}>
+                <div>
                     <div className={styles['email-item-content-row']}>
                         <span className={styles['email-item-content-type']}>
                         From:&nbsp;</span>
@@ -44,7 +44,6 @@ const EmailItem = ({
                         <span className={styles['email-item-content-type']}>
                             Subject:&nbsp;</span>
                             <span className={styles['email-item-content']}>{details.subject}</span>
-                             <b>id:{details.id}</b>
                     </div>
                     <div className={`${styles['email-item-sd']} ${
                         selectedEmailId && styles['selected']}`}>

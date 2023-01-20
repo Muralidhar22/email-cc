@@ -32,6 +32,6 @@ export const setPersistedEmailStatus = (emailId, statusType) => {
     } else if (!persistedStatus){
         persistedStatus = { [statusType]: [emailId] }
     }
-    console.log("new persistedState", persistedStatus)
+
     localStorage.setItem('email-status', JSON.stringify(persistedStatus))
 }

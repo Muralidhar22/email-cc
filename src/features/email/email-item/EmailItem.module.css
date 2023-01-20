@@ -4,6 +4,9 @@
     padding: 1rem;
     background-color: #ffffff;
     border-radius: 0.5rem;
+    color: var(--color-text);
+    font-size: 0.875rem;
+    border: 2px solid var(--color-border);
 }
 .email-item.selected{
     border: 2px solid var(--color-accent)

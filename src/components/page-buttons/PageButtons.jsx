@@ -20,13 +20,13 @@ const PageButtons = () => {
          total
          ?
          <div className={styles['page-buttons']}>
-             {page > 1 && <button>◀</button>}
+             {page > 1 && <button onClick={() => handlePageClick(page - 1)} className={styles['page-direction-buttons']}>◀</button>}
             {
                 [...Array(Math.ceil(total / 10)).keys()].map((_,idx) => (
                    <button key={idx} className={`${styles['page-numbered-buttons']} ${page === idx+1 && styles['selected']}`} data-selected={idx+1 === page} onClick={() => handlePageClick(idx+1)}>{idx + 1}</button>
                 ))
             }
-            {page < Math.ceil(total / 10) && <button>▶</button>}
+            {page < Math.ceil(total / 10) && <button onClick={() => handlePageClick(page + 1)} className={styles['page-direction-buttons']}>▶</button>}
          </div>
          :
          null   

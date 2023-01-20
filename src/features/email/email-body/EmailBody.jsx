@@ -59,8 +59,7 @@ const EmailBody = ({ selectedEmailId, filterKey }) => {
                 </span>
                 <div className={styles['email-body-content']}>
                     <div className={styles['email-body-header']}>
-                        <h2 className={styles['email-body-subject']}>{subject} <b>{id}</b></h2>
-                        <span className={styles['time-stamp']}>{formattedTimeStamp}</span>
+                        <h2 className={styles['email-body-subject']}>{subject}</h2>
                         {emailState.favorite 
                         ?
                         <button onClick={() => toggleFavorite(false)} className={styles['inverted-favorite-btn']}>Unmark favorite</button>
@@ -68,9 +67,10 @@ const EmailBody = ({ selectedEmailId, filterKey }) => {
                         <button onClick={() => toggleFavorite(true)} className={styles['favorite-btn']}>Mark as favorite</button>
                         }
                     </div>
+                    <span className={styles['time-stamp']}>{formattedTimeStamp}</span>
                     <div className={styles['email-body-text']}>
-                    {para.map(el => (
-                        <p className={styles['email-body-para']}>
+                    {para.map((el, idx) => (
+                        <p key={idx} className={styles['email-body-para']}>
                             {el.innerText}
                         </p>
                     ))}

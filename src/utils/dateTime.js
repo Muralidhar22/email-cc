@@ -5,7 +5,7 @@ export const getFormattedDateTime = (date) => {
             minute: '2-digit',
         }) 
         const time = actualTime.split(' ')[0]
-        console.log("asdasdas",actualTime, time, date)
+        console.log("asdasdas",{actualTime}, {time}, {date})
         const timeConvention = actualTime.split(' ')[1].toLowerCase()
     
         const formattedDate = new Date(date).toLocaleDateString('en-GB', {

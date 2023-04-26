@@ -14,7 +14,7 @@ const EmailBody = ({ selectedEmailId, filterKey, setSplitScreen }) => {
     const { id, from, subject, date } = useSelector(state => {
         console.log("state",state.email.filteredList, "selected", selectedEmailId)
         return state.email.filteredList.find(item => { 
-            console.log("item id",item.id, "SelectedEmail", selectedEmailId)
+            // console.log("item id",item.id, "SelectedEmail", selectedEmailId)
             return item.id === selectedEmailId
         })
     })

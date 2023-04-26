@@ -11,7 +11,13 @@ import styles from "./EmailBody.module.css";
 const EmailBody = ({ selectedEmailId, filterKey, setSplitScreen }) => {
     const dispatch = useDispatch();
     const page = useSelector(state => state.email.page)
-    const { id, from, subject, date } = useSelector(state => state.email.filteredList.find(item => item.id === selectedEmailId))
+    const { id, from, subject, date } = useSelector(state => {
+        console.log("state",state.email.filteredList, "selected", selectedEmailId)
+        return state.email.filteredList.find(item => { 
+            console.log("item id",item.id, "SelectedEmail", selectedEmailId)
+            return item.id === selectedEmailId
+        })
+    })
     const emailState = useSelector(state => state.email.list.find(item => item.id === id))
     const { data, loading, error } =  useSelector(state => state.emailBody)
     const para = []

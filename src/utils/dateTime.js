@@ -1,12 +1,10 @@
+import { format } from "date-fns";
+
 export const getFormattedDateTime = (date) => {
     if(date) {
-        const actualTime = new Date(date).toLocaleTimeString([],{
-            hour: '2-digit',
-            minute: '2-digit',
-        }) 
-        const time = actualTime.split(' ')[0]
-        console.log("asdasdas",{actualTime}, {time}, {date})
-        const timeConvention = actualTime.split(' ')[1] && actualTime.split(' ')[1].toLowerCase()
+        const actualTime = new Date(date)
+        
+        const timeConvention = format(actualTime, 'hh:mm a')
     
         const formattedDate = new Date(date).toLocaleDateString('en-GB', {
             day: 'numeric',
@@ -14,6 +12,6 @@ export const getFormattedDateTime = (date) => {
             year: 'numeric',
         })
         
-        return `${formattedDate} ${time+timeConvention}`;
+        return `${formattedDate} ${timeConvention}`;
     }
 }
